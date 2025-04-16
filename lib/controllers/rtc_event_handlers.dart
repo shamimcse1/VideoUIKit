@@ -61,9 +61,7 @@ Future<RtcEngineEventHandler> rtcEngineEventHandler(
   }, onFirstLocalVideoFrame: (source, width, height, elapsed) {
     agoraEventHandlers.onFirstLocalVideoFrame
         ?.call(source, width, height, elapsed);
-  }, onFirstLocalVideoFramePublished: (source, elapsed) {
-    agoraEventHandlers.onFirstLocalVideoFramePublished?.call(source, elapsed);
-  }, onFirstRemoteAudioDecoded: (connection, uid, elapsed) {
+  },  onFirstRemoteAudioDecoded: (connection, uid, elapsed) {
     agoraEventHandlers.onFirstRemoteAudioDecoded
         ?.call(connection, uid, elapsed);
   }, onFirstRemoteAudioFrame: (connection, userId, elapsed) {
@@ -116,8 +114,6 @@ Future<RtcEngineEventHandler> rtcEngineEventHandler(
     agoraEventHandlers.onLastmileQuality?.call(quality);
   }, onLastmileProbeResult: (result) {
     agoraEventHandlers.onLastmileProbeResult?.call(result);
-  }, onLocalVideoStats: (source, stats) {
-    agoraEventHandlers.onLocalVideoStats?.call(source, stats);
   }, onLocalAudioStats: (connection, stats) {
     agoraEventHandlers.onLocalAudioStats?.call(connection, stats);
   }, onRemoteVideoStats: (connection, stats) {
@@ -302,15 +298,6 @@ Future<RtcEngineEventHandler> rtcEngineEventHandler(
     agoraEventHandlers.onCameraReady?.call();
   }, onEncryptionError: (connection, errorType) {
     agoraEventHandlers.onEncryptionError?.call(connection, errorType);
-  }, onExtensionError: (provider, extension, error, message) {
-    agoraEventHandlers.onExtensionError
-        ?.call(provider, extension, error, message);
-  }, onExtensionEvent: (provider, extension, key, value) {
-    agoraEventHandlers.onExtensionEvent?.call(provider, extension, key, value);
-  }, onExtensionStarted: (provider, extension) {
-    agoraEventHandlers.onExtensionStarted?.call(provider, extension);
-  }, onExtensionStopped: (provider, extension) {
-    agoraEventHandlers.onExtensionStopped?.call(provider, extension);
   }, onIntraRequestReceived: (connection) {
     agoraEventHandlers.onIntraRequestReceived?.call(connection);
   }, onPermissionError: (permissionType) {
