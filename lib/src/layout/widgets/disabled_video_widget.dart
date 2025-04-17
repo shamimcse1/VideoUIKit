@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 /// Widget that is displayed when local/remote video is disabled.
 class DisabledVideoWidget extends StatefulWidget {
@@ -15,10 +16,7 @@ class _DisabledVideoWidgetState extends State<DisabledVideoWidget> {
       color: Colors.black,
       padding: const EdgeInsets.all(8.0),
       child: Center(
-          child: Icon(
-        Icons.person_rounded,
-        color: Colors.white,
-      )),
+          child: SvgPicture.asset("assets/images/app_logo.svg")),
     );
   }
 }
