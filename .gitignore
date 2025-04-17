@@ -1,2 +1,5 @@
 /example/.dart_tool/
 /example/build/
+
+# FVM Version Cache
+.fvm/
